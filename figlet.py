@@ -17,14 +17,13 @@ elif len(sys.argv) == 3:
     if sys.argv[1] not in ["-f","--font"]:
         sys.exit("illegal input")
 
-    else:
-      try:
-        user_input = input("input:")
-        figlet.setFont(font=sys.argv[2])
-        print(figlet.renderText(user_input))
+    if sys.argv[2] not in figlet.getFonts():
+       
+            user_input = input("input:")
+            figlet.setFont(font=sys.argv[2])
+            print(figlet.renderText(user_input))
 
-      except ValueError:
-        pass
+        
 
      
 else:
