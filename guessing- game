@@ -1,0 +1,39 @@
+import sys
+import random
+
+
+
+while True:
+    try:
+                user_input = int(input("level:")) 
+                
+                if user_input > 0:
+
+                    
+                    break
+    except  ValueError:
+        continue
+
+i = random.randint(1, user_input)
+while True:
+    try:
+                
+                
+                guess_input = int(input("Guess"))
+                if guess_input <= 0:
+                    continue
+                if guess_input > i:
+                   print("TOO LATGE")
+                   
+                elif guess_input < i:
+                    print("Too small")
+                    
+                else:
+                    print("We got it right!!!")
+                    break
+    
+    except ValueError:
+                pass
+        
+
+            

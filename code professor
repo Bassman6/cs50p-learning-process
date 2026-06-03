@@ -1,0 +1,77 @@
+import random
+
+
+def main():
+    nowlevel = get_level()
+    score = 0
+    for i in range(10):
+        x = generate_integer(nowlevel) 
+        y = generate_integer(nowlevel)
+        a = x + y     
+        
+        
+
+        for z in range(3):
+            
+            try:
+                answer_input = int(input(f"{x} + {y} = "))
+                if a == answer_input:
+                    print("clever!")
+                    
+                    score += 1
+                    break
+                else:
+                    print("EEE")
+                    if z == 2:
+                        print(f"\n{x} + {y}={a}")
+                    continue
+            except ValueError:
+                print("EEE")
+                if z == 2:
+                    print(f"\n{x} + {y}={a}")
+                continue
+    
+    print(f"Score: {score}")
+
+
+
+    
+        
+
+
+
+
+def get_level():
+    while True:
+        try:       
+            user_input = int(input("level: "))
+            if 0 < user_input < 4:
+                return user_input 
+            
+            
+        except ValueError:
+            pass
+
+
+def generate_integer(level):
+    
+    
+    
+    if level == 1:
+        return random.randint(0,9)
+        
+    
+    elif level == 2:
+        return random.randint(10,99)
+        
+    
+    else: 
+        return random.randint(100,999)
+    
+    
+
+    
+
+
+if __name__ == "__main__":
+    main()
